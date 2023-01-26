@@ -1,5 +1,9 @@
 package Tests;
 
+import HelpMethods.ElementMethods;
+import HelpMethods.PageMethods;
+import HelpMethods.WindowMethods;
+import ShareData.shareData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,71 +15,57 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class WindowsTest {
-
-    public WebDriver driver;
+public class WindowsTest extends shareData {
 
     @Test
     public void metodaTest(){
 
-        //Deschidem un browser de chrome
-        driver = new ChromeDriver();
+        ElementMethods element = new ElementMethods(getDriver());
+        PageMethods pelement = new PageMethods(getDriver());
+        WindowMethods welement = new WindowMethods(getDriver());
 
-        //Facem driver ul mare
-        driver.manage().window().maximize();
+        WebElement SkipRegister = getDriver().findElement(By.id("btn2"));
+        element.clickElement(SkipRegister);
 
-        //Accesam un URl specific - metoda get asteapta ca pagina sa se incarce
-        driver.get("https://demo.automationtesting.in/Index.html");
+        WebElement SwitchToElem = getDriver().findElement(By.xpath("//a[text()='SwitchTo']"));
 
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        element.moveToElement(SwitchToElem);
 
-        WebElement SkipRegister = driver.findElement(By.id("btn2"));
-        SkipRegister.click();
+        WebElement clickWindows = getDriver().findElement(By.xpath("//a[text() = 'Windows']"));
+        element.clickElement(clickWindows);
 
-        WebElement SwitchToElem = driver.findElement(By.xpath("//a[text()='SwitchTo']"));
+        pelement.navigateToPage("https://demo.automationtesting.in/Windows.html");
 
-        // Mergem cu mouse ul pe un anumit element !!! = Actiuni cand dai cu mouse ul peste
-        Actions actionOnWindows = new Actions(driver);
-        actionOnWindows.moveToElement(SwitchToElem).perform(); //se muta pe element si face perform !! obligatoriu  .perform
+        List<WebElement> windowsOptions = getDriver().findElements(By.cssSelector(".nav-stacked>li>a"));
 
-        WebElement clickWindows = driver.findElement(By.xpath("//a[text() = 'Windows']"));
-        clickWindows.click();
-
-        driver.navigate().to("https://demo.automationtesting.in/Windows.html");
-
-        List<WebElement> windowsOptions = driver.findElements(By.cssSelector(".nav-stacked>li>a"));
-
-        windowsOptions.get(0).click();
-        WebElement btn1 = driver.findElement(By.cssSelector("a>button"));
-        btn1.click();
+        element.clickElement(windowsOptions.get(0));
+        WebElement btn1 = getDriver().findElement(By.cssSelector("a>button"));
+        element.clickElement(btn1);
 
         //identificam multimea de taburi/windows
-        List<String> browserTabs = new ArrayList<String>(driver.getWindowHandles());
         //ne mutam cu focusul pe un tab specific
-        driver.switchTo().window(browserTabs .get(1));
-        driver.close(); //inchidem Tab-ul cu id ul 1/curent
-        driver.switchTo().window(browserTabs.get(0));
+        welement.moveSpecificTabW(1);
+        welement.closeCurentTabW(); //inchidem Tab-ul cu id ul 1/curent
+        welement.moveSpecificTabW(0);
 
         windowsOptions.get(1).click();
-        WebElement btn2 = driver.findElement(By.cssSelector("#Seperate>button"));
-        btn2.click();
+        WebElement btn2 = getDriver().findElement(By.cssSelector("#Seperate>button"));
+        element.clickElement(btn2);
 
-        List<String> browserWindows = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(browserWindows.get(1));
-        driver.close();
-        driver.switchTo().window(browserWindows.get(0));
+        List<String> browserWindows = new ArrayList<String>(getDriver().getWindowHandles());
+        welement.moveSpecificTabW(1);
+        welement.closeCurentTabW();
+        welement.moveSpecificTabW(0);
 
         windowsOptions.get(2).click();
-        WebElement btn3 = driver.findElement(By.cssSelector("#Multiple>button"));
-        btn3.click();
+        WebElement btn3 = getDriver().findElement(By.cssSelector("#Multiple>button"));
+        element.clickElement(btn3);
 
-        List<String> multipleTabs = new ArrayList<String> (driver.getWindowHandles());
-
-        driver.switchTo().window(multipleTabs.get(2));
-        driver.close();
-        driver.switchTo().window(multipleTabs.get(1));
-        driver.close();
-        driver.switchTo().window(multipleTabs.get(0));
+        welement.moveSpecificTabW(2);
+        welement.closeCurentTabW();
+        welement.moveSpecificTabW(1);
+        welement.closeCurentTabW();
+        welement.moveSpecificTabW(0);
 
     }
 
