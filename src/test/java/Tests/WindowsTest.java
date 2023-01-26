@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class WindowsTestCurs {
+public class WindowsTest {
 
     public WebDriver driver;
 
@@ -76,7 +76,6 @@ public class WindowsTestCurs {
         driver.switchTo().window(multipleTabs.get(1));
         driver.close();
         driver.switchTo().window(multipleTabs.get(0));
-
 
     }
 
