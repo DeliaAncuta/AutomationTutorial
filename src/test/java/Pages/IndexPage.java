@@ -23,11 +23,13 @@ public class IndexPage extends BasePage{
 
     // Actiuni sepcifice pt IndexPage
 
-    public void clickSignin(){
+    public LoginPage clickSignin(){
         element.clickElement(SignIn);
+        return new LoginPage(driver);
     }
 
-    public void clickSkipSignIn(){
+    public RegisterPage clickSkipSignIn(){
         element.clickElement(SkipRegister);
+        return new RegisterPage(driver);
     }
 }
