@@ -3,20 +3,22 @@ package Tests;
 import HelpMethods.ElementMethods;
 import HelpMethods.FrameMethods;
 import HelpMethods.PageMethods;
+import Objects.FrameObject;
 import Pages.FramePage;
 import Pages.IndexPage;
 import Pages.RegisterPage;
-import ShareData.ShareData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
+import ShareData.Hooks;
 import org.testng.annotations.Test;
 
-import java.util.List;
 
-public class FrameTest extends ShareData {
+
+public class FrameTest extends Hooks {
 
     @Test
     public void metodaTest(){
+
+        FrameObject frameObject = new FrameObject(testData);
 
         IndexPage indexPage = new IndexPage(getDriver());
         indexPage.clickSkipSignIn();
@@ -25,8 +27,8 @@ public class FrameTest extends ShareData {
         registerPage.goToFrame();
 
         FramePage framePage = new FramePage(getDriver());
-        framePage.firstFrame("Am ajuns aici");
-        framePage.secondFrame("si acum aici");
+        framePage.firstFrame(frameObject);
+        framePage.secondFrame(frameObject);
     }
 
 }

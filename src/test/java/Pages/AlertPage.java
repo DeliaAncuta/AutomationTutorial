@@ -1,6 +1,6 @@
 package Pages;
 
-import org.openqa.selenium.By;
+import Objects.AlertObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,10 +36,10 @@ public class AlertPage extends BasePage {
         alertsMethods.dismissAlert();
     }
 
-    public void interactAlertValue(String value){
+    public void interactAlertValue(AlertObject alertObject){
         element.clickElement(alertOptions.get(2));
         element.clickElement(btn3);
-        alertsMethods.fillAlert(value, Boolean.TRUE);
+        alertsMethods.fillAlert(alertObject.getAlertText(), Boolean.TRUE);
     }
 
 }

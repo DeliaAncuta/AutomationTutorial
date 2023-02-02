@@ -1,5 +1,6 @@
 package Pages;
 
+import Objects.LoginObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,14 +25,16 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void LoginInvalid(String emailValue, String parolaValue, String expectedError){
 
-        element.fillElement(email , emailValue);
 
-        element.fillElement(parola, parolaValue);
+    public void LoginInvalid(LoginObject loginObject){
+
+        element.fillElement(email , loginObject.getEmail());
+
+        element.fillElement(parola, loginObject.getPassword());
 
         element.clickElement(Enter);
-        element.validateElementText(error, expectedError);
+        element.validateElementText(error, loginObject.getMessage());
 
     }
 }

@@ -1,21 +1,26 @@
 package Tests;
 
+import Objects.LoginObject;
 import Pages.IndexPage;
 import Pages.LoginPage;
-import ShareData.ShareData;
+
+import ShareData.Hooks;
 import org.testng.annotations.Test;
 
-public class LoginTest extends ShareData {
+
+public class LoginTest extends Hooks {
 
 
     @Test
     public void metodaTest(){
 
+        LoginObject loginObject = new LoginObject(testData);
+
         IndexPage indexPage = new IndexPage(getDriver());
         indexPage.clickSignin();
 
         LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.LoginInvalid("delia@gmail.com", "Parola","Invalid User Name or PassWord");
+        loginPage.LoginInvalid(loginObject);
 
     }
 

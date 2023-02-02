@@ -1,5 +1,6 @@
 package Pages;
 
+import Objects.RegisterObject;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -100,6 +101,15 @@ public class RegisterPage extends BasePage{
         pageMethods.navigateToPage("https://demo.automationtesting.in/Windows.html");
     }
 
+    public void registerProcess(RegisterObject registerObject){
+        insertRegisterData(registerObject.getFirstName(), registerObject.getLastName(), registerObject.getAdress(), registerObject.getEmail(), registerObject.getTelefon());
+        Gen();
+        SkillsInfo(registerObject.getLanguage(), registerObject.getpLanguage());
+        selectCountry(registerObject.getCountry());
+        birthInfo(registerObject.getYear(), registerObject.getMonth(), registerObject.getDay());
+        passWord(registerObject.getPassword(), registerObject.getConfirmPassword());
+    }
+
     public void insertRegisterData(String firstNameValue,String lastNameValue, String adressValue, String emailValue, String telefonValue ){
         element.fillElement(FirstName, firstNameValue);
         element.fillElement(LastName, lastNameValue);
@@ -113,13 +123,13 @@ public class RegisterPage extends BasePage{
     }
 
 
-    public void SkillsInfo(String value){
+    public void SkillsInfo(String language, String pLanguage){
         element.clickElement(Hobby);
         element.scrollByPixel(0, 300);
         element.clickElement(Language);
 
         // Interactionam cu o multime de elemente .Lista de Language care e element div
-        String ExpectedLanguage = "English";
+        String ExpectedLanguage = language;
 
         for(Integer i = 0; i<LanguageOptions.size(); i++){
             if(LanguageOptions.get(i).getText().equals(ExpectedLanguage)){ //chemam elementul, ii citim valoarea cu getText si verificam ca textul de pe element sa fie cu
@@ -127,7 +137,7 @@ public class RegisterPage extends BasePage{
                 element.clickElement(LanguageOptions.get(i)); // pe elementul curent facem click
             }
         }
-        element.SelectElementValue(Skills,value);
+        element.SelectElementValue(Skills,pLanguage);
 
     }
 

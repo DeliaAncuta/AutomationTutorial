@@ -1,5 +1,6 @@
 package Pages;
 
+import Objects.FrameObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,23 +22,23 @@ public class FramePage extends BasePage {
     @FindBy(css="input[type='text']")
     private WebElement input2;
 
-    public void firstFrame(String value){
+    public void firstFrame(FrameObject frameObject){
         element.clickElement(FrameOptions.get(0));
 
         frameMethods.switchFrame("singleframe");
 
-        element.fillElement(input1, value );
+        element.fillElement(input1, frameObject.getFirstFrame() );
 
         frameMethods.switchDefault();
     }
 
-    public void secondFrame(String value){
+    public void secondFrame(FrameObject frameObject){
         element.clickElement(FrameOptions.get(1));
 
         frameMethods.switchFrame(driver.findElement(By.cssSelector("iframe[src='MultipleFrames.html']")));
         frameMethods.switchFrame(driver.findElement(By.cssSelector("iframe[src='SingleFrame.html']")));
 
-        element.fillElement(input1, value );
+        element.fillElement(input1, frameObject.getSecondFrame());
 
         element.fillElement(input2, "Acum am ajuns aici");
         frameMethods.switchDefault();

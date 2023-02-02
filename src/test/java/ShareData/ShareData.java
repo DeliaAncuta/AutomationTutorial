@@ -18,7 +18,7 @@ public class ShareData {
 
     //folosim adnotarea de @Before din testNG
 
-    @BeforeMethod
+
     public void setupChrome(){
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/Driver/chromedriver.exe");
@@ -42,7 +42,7 @@ public class ShareData {
     }
 
     //Folosim @After pt a iunchide driver-ul
-    @AfterMethod
+
     public void clearBrowser(){
 
         driver.quit();

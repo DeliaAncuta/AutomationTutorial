@@ -3,10 +3,11 @@ package Tests;
 import Pages.IndexPage;
 import Pages.RegisterPage;
 import Pages.WindowPage;
-import ShareData.ShareData;
+
+import ShareData.Hooks;
 import org.testng.annotations.Test;
 
-public class WindowsTest extends ShareData {
+public class WindowsTest extends Hooks {
 
     @Test
     public void metodaTest(){
