@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-02-28T20:52:13 EET" name="Testing Suite" finished-at="2023-02-28T20:53:01 EET" duration-ms="48315">
+    <groups>
+    </groups>
+    <test started-at="2023-02-28T20:52:13 EET" name="Parallel Tests" finished-at="2023-02-28T20:53:01 EET" duration-ms="48315">
+      <class name="Tests.AlertTest">
+        <test-method is-config="true" signature="prepareEnviroment()[pri:0, instance:Tests.AlertTest@bd4dc25]" started-at="2023-02-28T20:52:13 EET" name="prepareEnviroment" finished-at="2023-02-28T20:52:21 EET" duration-ms="7879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prepareEnviroment -->
+        <test-method signature="metodaTest()[pri:0, instance:Tests.AlertTest@bd4dc25]" started-at="2023-02-28T20:52:21 EET" name="metodaTest" finished-at="2023-02-28T20:53:01 EET" duration-ms="40020" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- metodaTest -->
+        <test-method is-config="true" signature="clearEnviroment(org.testng.ITestResult)[pri:0, instance:Tests.AlertTest@bd4dc25]" started-at="2023-02-28T20:53:01 EET" name="clearEnviroment" finished-at="2023-02-28T20:53:01 EET" duration-ms="341" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=metodaTest status=SUCCESS method=AlertTest.metodaTest()[pri:0, instance:Tests.AlertTest@bd4dc25] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearEnviroment -->
+      </class> <!-- Tests.AlertTest -->
+      <class name="Tests.RegisterTest">
+        <test-method is-config="true" signature="prepareEnviroment()[pri:0, instance:Tests.RegisterTest@5ba3f27a]" started-at="2023-02-28T20:52:13 EET" name="prepareEnviroment" finished-at="2023-02-28T20:52:21 EET" duration-ms="7910" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prepareEnviroment -->
+        <test-method signature="metodaTest()[pri:0, instance:Tests.RegisterTest@5ba3f27a]" started-at="2023-02-28T20:52:21 EET" name="metodaTest" finished-at="2023-02-28T20:52:51 EET" duration-ms="30799" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- metodaTest -->
+        <test-method is-config="true" signature="clearEnviroment(org.testng.ITestResult)[pri:0, instance:Tests.RegisterTest@5ba3f27a]" started-at="2023-02-28T20:52:51 EET" name="clearEnviroment" finished-at="2023-02-28T20:52:52 EET" duration-ms="454" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=metodaTest status=SUCCESS method=RegisterTest.metodaTest()[pri:0, instance:Tests.RegisterTest@5ba3f27a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearEnviroment -->
+      </class> <!-- Tests.RegisterTest -->
+      <class name="Tests.FrameTest">
+        <test-method is-config="true" signature="prepareEnviroment()[pri:0, instance:Tests.FrameTest@7bd4937b]" started-at="2023-02-28T20:52:13 EET" name="prepareEnviroment" finished-at="2023-02-28T20:52:20 EET" duration-ms="7538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prepareEnviroment -->
+        <test-method signature="metodaTest()[pri:0, instance:Tests.FrameTest@7bd4937b]" started-at="2023-02-28T20:52:20 EET" name="metodaTest" finished-at="2023-02-28T20:52:51 EET" duration-ms="30554" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- metodaTest -->
+        <test-method is-config="true" signature="clearEnviroment(org.testng.ITestResult)[pri:0, instance:Tests.FrameTest@7bd4937b]" started-at="2023-02-28T20:52:51 EET" name="clearEnviroment" finished-at="2023-02-28T20:52:51 EET" duration-ms="537" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=metodaTest status=SUCCESS method=FrameTest.metodaTest()[pri:0, instance:Tests.FrameTest@7bd4937b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearEnviroment -->
+      </class> <!-- Tests.FrameTest -->
+      <class name="Tests.LoginTest">
+        <test-method is-config="true" signature="prepareEnviroment()[pri:0, instance:Tests.LoginTest@21e360a]" started-at="2023-02-28T20:52:13 EET" name="prepareEnviroment" finished-at="2023-02-28T20:52:21 EET" duration-ms="8040" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prepareEnviroment -->
+        <test-method signature="metodaTest()[pri:0, instance:Tests.LoginTest@21e360a]" started-at="2023-02-28T20:52:21 EET" name="metodaTest" finished-at="2023-02-28T20:52:28 EET" duration-ms="7079" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- metodaTest -->
+        <test-method is-config="true" signature="clearEnviroment(org.testng.ITestResult)[pri:0, instance:Tests.LoginTest@21e360a]" started-at="2023-02-28T20:52:28 EET" name="clearEnviroment" finished-at="2023-02-28T20:52:41 EET" duration-ms="13681" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=metodaTest status=SUCCESS method=LoginTest.metodaTest()[pri:0, instance:Tests.LoginTest@21e360a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearEnviroment -->
+      </class> <!-- Tests.LoginTest -->
+      <class name="Tests.WindowsTest">
+        <test-method is-config="true" signature="prepareEnviroment()[pri:0, instance:Tests.WindowsTest@58d75e99]" started-at="2023-02-28T20:52:13 EET" name="prepareEnviroment" finished-at="2023-02-28T20:52:21 EET" duration-ms="7990" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prepareEnviroment -->
+        <test-method signature="metodaTest()[pri:0, instance:Tests.WindowsTest@58d75e99]" started-at="2023-02-28T20:52:21 EET" name="metodaTest" finished-at="2023-02-28T20:52:59 EET" duration-ms="38660" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- metodaTest -->
+        <test-method is-config="true" signature="clearEnviroment(org.testng.ITestResult)[pri:0, instance:Tests.WindowsTest@58d75e99]" started-at="2023-02-28T20:52:59 EET" name="clearEnviroment" finished-at="2023-02-28T20:53:00 EET" duration-ms="545" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=metodaTest status=SUCCESS method=WindowsTest.metodaTest()[pri:0, instance:Tests.WindowsTest@58d75e99] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearEnviroment -->
+      </class> <!-- Tests.WindowsTest -->
+    </test> <!-- Parallel Tests -->
+  </suite> <!-- Testing Suite -->
+</testng-results>
