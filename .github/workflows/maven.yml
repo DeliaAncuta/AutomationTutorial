@@ -27,3 +27,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install -Dci_cd=true
+    - name: Publish tests Report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report.html
+        path: target/report
